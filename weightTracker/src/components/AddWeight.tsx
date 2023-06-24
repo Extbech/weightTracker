@@ -7,8 +7,8 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import SubmitWeight from '../helper/SubmitWeight';
-import Card from "./Card";
 import dayjs, { Dayjs } from 'dayjs';
+import Card from './Card';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -59,10 +59,14 @@ const AddWeight = () => {
 
     return (
         <Box sx={{ display: "flex", flexDirection: "column", justifyContent: 'center', alignContent: 'center' }}>
-            <p className='text-3xl'>Add Weight!</p>
-            <Box sx={{ minWidth: 120, m: 5, display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center' }}>
-                <Box sx={{ width: 1050, background: "white", borderRadius: 3 }}>
-                    <FormControl sx={{ m: 1, width: '25ch', background: "white", borderRadius: 3 }}>
+            <p className='text-2xl'>Add Weight!</p>
+            <Box sx={{
+                minWidth: 120, m: 3, display: 'flex',
+                flexDirection: 'row', justifyContent: 'center', alignContent: 'center',
+                brackground: 'gray'
+            }}>
+                <Box sx={{ width: 1050, background: "rgb(17 24 39)", borderRadius: 3 }}>
+                    <FormControl sx={{ m: 1, width: '25ch', borderRadius: 3 }}>
                         <InputLabel id="demo-simple-select-label">Name</InputLabel>
                         <Select
                             labelId="demo-simple-select-label"
@@ -70,21 +74,22 @@ const AddWeight = () => {
                             value={name}
                             label="Name"
                             onChange={handleChange}
+                            sx={{ input: { color: 'red' } }}
                         >
                             <MenuItem value={"Benjamin"}>Benjamin</MenuItem>
-                            <MenuItem value={"Mailin"}>Mailin</MenuItem>
                         </Select>
                     </FormControl>
-                    <FormControl sx={{ m: 1, width: '25ch', background: "white", borderRadius: 3 }}>
+                    <FormControl sx={{ m: 1, width: '25ch', borderRadius: 3 }}>
                         <TextField
                             id="outlined-basic"
                             label="Weight"
                             variant="outlined"
                             value={weight}
                             onChange={handleWeightChange}
+                            InputProps={{ inputProps: { style: { color: '#fff' } } }}
                         />
                     </FormControl>
-                    <FormControl sx={{ background: "white", borderRadius: 3 }}>
+                    <FormControl sx={{ borderRadius: 3 }}>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <DemoContainer components={['DatePicker', 'DatePicker']}>
                                 <DatePicker

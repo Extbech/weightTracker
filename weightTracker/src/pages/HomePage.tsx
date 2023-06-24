@@ -43,16 +43,16 @@ const HomePage = () => {
             );
     }, []);
     return (
-        <div className="h-screen grid grid-cols-1 grid-rows-5 gap-6 p-10 bg-gray-900 text-gray-300">
-            <div className="grid row-span-4">
-                <p className='text-4xl'>Weight Tracker</p>
-                <div className="grid grid-cols-2 gap-10 p-10 row-span-4">
-                    <WeightChart data={benjiMax} name="Benjamin" />
-                    <WeightChart data={mailinMax} name="Mailin" />
+        <div className="h-screen grid grid-cols-1 grid-rows-6 gap-6 p-10 bg-gray-900 text-gray-300">
+            <div className="grid row-span-6">
+                <p className='text-4xl mb-5'>Weight Tracker</p>
+                <div className="row-span-1 mb-5">
+                    < AddWeight />
                 </div>
-            </div>
-            <div className="row-span-1">
-                < AddWeight />
+                <p className='text-2xl mb-5'>Weight Chart</p>
+                <div className="flex justify-center h-full">
+                    <WeightChart data={benjiMax} name="Benjamin" />
+                </div>
             </div>
         </div>
     );

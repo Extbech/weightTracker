@@ -17,3 +17,42 @@
 
   align-items: center;
 }
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+}
+
+.MuiFilledInput-root {
+  border-bottom: 1px solid white !important;
+  color: white !important;
+}
+
+.MuiInput-root {
+  border-bottom: 1px solid white !important;
+  color: white !important;
+}
+
+.MuiSelect-select .MuiSelect-outlined .MuiInputBase-input .MuiOutlinedInput-input {
+  color: white !important;
+  background-color: rgb(17 24 39) !important;
+}
+
+.MuiInputLabel-root {
+  color: white !important;
+}
+
+.MuiInputBase-root {
+  color: white !important;
+}
+
+.MuiButtonBase-root {
+  color: white !important;
+}
+
+.MuiSelect-icon {
+  color: white !important;
+}
+
+.MuiPaper-root {
+  background-color: rgb(17 24 39) !important;
+}

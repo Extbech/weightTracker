@@ -140,40 +140,22 @@ def drop_table_weight(conn):
 
 #### SETUP ####
 def add_pre_weights(conn):
-    benji_weight_loss_list = [Calculate_Maximum_weight_loss(65, 80.8, 180, 25, "M", i+1, "Benjamin") for i in range(5)]
-    mailin_weight_loss_list = [Calculate_Maximum_weight_loss(65, 113.4, 178, 24, "F", i+1, "Mailin") for i in range(5)]
-    eianr_weight_loss_list = [Calculate_Maximum_weight_loss(65, 94, 180, 25, "M", i+1, "Einar") for i in range(5)]
+    benji_weight_loss_list = [Calculate_Maximum_weight_loss(70, 80, 180, 25, "M", i+1, "Benjamin") for i in range(5)]
     for i in range(5):
-        add_max_weight(conn, "Benjamin", date.today(), 80.8, i+1)
-        add_max_weight(conn, "Mailin", date.today(), 113.4, i+1)
-        add_max_weight(conn, "Einar", date.today(), 94, i+1)
+        add_max_weight(conn, "Benjamin", date.today(), 80, i+1)
     for j in range(len(benji_weight_loss_list)):
         for i in range(len(benji_weight_loss_list[j])):
             add_max_weight(conn, benji_weight_loss_list[j][i]["name"], benji_weight_loss_list[j][i]["timestamp"], benji_weight_loss_list[j][i]["weight"], j+1)
-            add_max_weight(conn, mailin_weight_loss_list[j][i]["name"], mailin_weight_loss_list[j][i]["timestamp"], mailin_weight_loss_list[j][i]["weight"], j+1)
-            add_max_weight(conn, eianr_weight_loss_list[j][i]["name"], eianr_weight_loss_list[j][i]["timestamp"], eianr_weight_loss_list[j][i]["weight"], j+1)
 
 def update_kcals(conn):
-    benji_weight_loss_list_500 = Calculate_kcal_deficit(65, 80.8, 500, "Benjamin")
-    mailin_weight_loss_list_500 = Calculate_kcal_deficit(65, 113.4, 500, "Mailin")
-    eianr_weight_loss_list_500 = Calculate_kcal_deficit(65, 94, 500, "Einar")
-    update_weight_500_kcal(conn, "Benjamin", date.today(), 80.8)
-    update_weight_500_kcal(conn, "Mailin", date.today(), 113.4)
-    update_weight_500_kcal(conn, "Einar", date.today(), 94)
+    benji_weight_loss_list_500 = Calculate_kcal_deficit(70, 80, 500, "Benjamin")
+    update_weight_500_kcal(conn, "Benjamin", date.today(), 80)
     for i in range(len(benji_weight_loss_list_500)):
         update_weight_500_kcal(conn, benji_weight_loss_list_500[i]["name"], benji_weight_loss_list_500[i]["timestamp"], benji_weight_loss_list_500[i]["weight"])
-        update_weight_500_kcal(conn, mailin_weight_loss_list_500[i]["name"], mailin_weight_loss_list_500[i]["timestamp"], mailin_weight_loss_list_500[i]["weight"])
-        update_weight_500_kcal(conn, eianr_weight_loss_list_500[i]["name"], eianr_weight_loss_list_500[i]["timestamp"], eianr_weight_loss_list_500[i]["weight"])
-    benji_weight_loss_list_1000 = Calculate_kcal_deficit(65, 80.8, 1000, "Benjamin")
-    mailin_weight_loss_list_1000 = Calculate_kcal_deficit(65, 113.4, 1000, "Mailin")
-    eianr_weight_loss_list_1000 = Calculate_kcal_deficit(65, 94, 1000, "Einar")
-    update_weight_1000_kcal(conn, "Benjamin", date.today(), 80.8)
-    update_weight_1000_kcal(conn, "Mailin", date.today(), 113.4)
-    update_weight_1000_kcal(conn, "Einar", date.today(), 94)
+    benji_weight_loss_list_1000 = Calculate_kcal_deficit(70, 80, 1000, "Benjamin")
+    update_weight_1000_kcal(conn, "Benjamin", date.today(), 80)
     for i in range(len(benji_weight_loss_list_1000)):
         update_weight_1000_kcal(conn, benji_weight_loss_list_1000[i]["name"], benji_weight_loss_list_1000[i]["timestamp"], benji_weight_loss_list_1000[i]["weight"])
-        update_weight_1000_kcal(conn, mailin_weight_loss_list_1000[i]["name"], mailin_weight_loss_list_1000[i]["timestamp"], mailin_weight_loss_list_1000[i]["weight"])
-        update_weight_1000_kcal(conn, eianr_weight_loss_list_1000[i]["name"], eianr_weight_loss_list_1000[i]["timestamp"], eianr_weight_loss_list_1000[i]["weight"])
 
 
 def setup():
@@ -191,8 +173,4 @@ def setup():
 
 if __name__ == '__main__':
     # If executed as main, this will create tables and insert initial data
-    #setup()
-    conn = create_connection(database)
-    if conn is not None:
-        update_weight(conn, "Benjamin", 80.4)
-        update_weight(conn, "Mailin", 114.4)
+    setup()
