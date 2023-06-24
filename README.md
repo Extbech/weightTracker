@@ -52,6 +52,7 @@ cd weightTracker
 2. Backend setup:
 
 ```shell
+cd server
 pip install -r requirements.txt
 ```
 
@@ -61,6 +62,7 @@ pip install -r requirements.txt
 - Install project dependencies:
 
 ```shell
+cd weightTracker
 npm install
 ```
 
