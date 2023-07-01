@@ -140,20 +140,20 @@ def drop_table_weight(conn):
 
 #### SETUP ####
 def add_pre_weights(conn):
-    benji_weight_loss_list = [Calculate_Maximum_weight_loss(70, 80, 180, 25, "M", i+1, "Benjamin") for i in range(5)]
+    benji_weight_loss_list = [Calculate_Maximum_weight_loss(70, 80.5, 180, 25, "M", i+1, "Benjamin") for i in range(5)]
     for i in range(5):
-        add_max_weight(conn, "Benjamin", date.today(), 80, i+1)
+        add_max_weight(conn, "Benjamin", date.today(), 80.5, i+1)
     for j in range(len(benji_weight_loss_list)):
         for i in range(len(benji_weight_loss_list[j])):
             add_max_weight(conn, benji_weight_loss_list[j][i]["name"], benji_weight_loss_list[j][i]["timestamp"], benji_weight_loss_list[j][i]["weight"], j+1)
 
 def update_kcals(conn):
-    benji_weight_loss_list_500 = Calculate_kcal_deficit(70, 80, 500, "Benjamin")
-    update_weight_500_kcal(conn, "Benjamin", date.today(), 80)
+    benji_weight_loss_list_500 = Calculate_kcal_deficit(70, 80.5, 500, "Benjamin")
+    update_weight_500_kcal(conn, "Benjamin", date.today(), 80.5)
     for i in range(len(benji_weight_loss_list_500)):
         update_weight_500_kcal(conn, benji_weight_loss_list_500[i]["name"], benji_weight_loss_list_500[i]["timestamp"], benji_weight_loss_list_500[i]["weight"])
-    benji_weight_loss_list_1000 = Calculate_kcal_deficit(70, 80, 1000, "Benjamin")
-    update_weight_1000_kcal(conn, "Benjamin", date.today(), 80)
+    benji_weight_loss_list_1000 = Calculate_kcal_deficit(70, 80.5, 1000, "Benjamin")
+    update_weight_1000_kcal(conn, "Benjamin", date.today(), 80.5)
     for i in range(len(benji_weight_loss_list_1000)):
         update_weight_1000_kcal(conn, benji_weight_loss_list_1000[i]["name"], benji_weight_loss_list_1000[i]["timestamp"], benji_weight_loss_list_1000[i]["weight"])
 

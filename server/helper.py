@@ -64,9 +64,6 @@ if __name__ == "__main__":
     ## Outdated, function now returns dict instead of wight: float.
     lifestyle = 5
     days = 34
-    benji_starting_weight = 82
-    mailin_starting_weight = 114
+    benji_starting_weight = 80
     final_weight_benji = Calculate_Maximum_weight_loss(days, benji_starting_weight, 180, 25, "M", lifestyle)
-    final_weight_mailin = Calculate_Maximum_weight_loss(days, mailin_starting_weight, 178, 24, "F", lifestyle)
     print(f"Your Weight after {days} days of maximum fatloss would be: {round(final_weight_benji, 2)} kg from {benji_starting_weight} kg, thats -{round(benji_starting_weight-final_weight_benji, 2)} kg")
-    print(f"Your Weight after {days} days of maximum fatloss would be: {round(final_weight_mailin, 2)} kg from {mailin_starting_weight} kg, thats -{round(mailin_starting_weight-final_weight_mailin, 2)} kg")
