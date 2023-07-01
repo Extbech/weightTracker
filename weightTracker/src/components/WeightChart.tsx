@@ -24,6 +24,7 @@ const WeightChart = ({ data, name }: { data: IResponse[], name: string }) => {
                         stroke="magenta"
                         fillOpacity={1}
                         strokeWidth={1.5}
+                        dot={false}
                     />
                     <Line
                         dataKey="kcal_1000_deficit"
@@ -31,6 +32,7 @@ const WeightChart = ({ data, name }: { data: IResponse[], name: string }) => {
                         stroke="lime"
                         fillOpacity={1}
                         strokeWidth={1.5}
+                        dot={false}
                     />
                     <Line
                         dataKey="fasted"
@@ -38,6 +40,7 @@ const WeightChart = ({ data, name }: { data: IResponse[], name: string }) => {
                         stroke="yellow"
                         fillOpacity={1}
                         strokeWidth={1.5}
+                        dot={false}
                     />
                     <Line
                         dataKey="actual_weight"
@@ -45,39 +48,14 @@ const WeightChart = ({ data, name }: { data: IResponse[], name: string }) => {
                         stroke="#4DFFFF"
                         fillOpacity={1}
                         strokeWidth={1.5}
+                        dot={false}
                     />
                     <Tooltip content={<CustomTooltip />} />
                     <XAxis dataKey={"timestamp"} stroke="#312e81" tickCount={5} />
-                    <YAxis domain={name == "Benjamin" ? [60, 85] : [90, 115]} stroke="#312e81" tickCount={5} dy={-5} />
+                    <YAxis domain={[60, 85]} stroke="#312e81" tickCount={5} dy={-5} />
                 </LineChart>
             </ResponsiveContainer>
         </Card>
     );
 };
 export default WeightChart;
-
-{/* <div className="">
-            <h1>{name}</h1>
-            <div>
-                <LineChart width={500} height={200} data={data}
-                    margin={{
-                        top: 5,
-                        right: 30,
-                        left: 20,
-                        bottom: 5,
-                    }}
-                    style={{ background: '#D27685' }}
-                >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey={'timestamp'} />
-                    <YAxis type="number" domain={name == "Benjamin" ? [62, 85] : [94, 120]} tickCount={6} />
-                    <Tooltip content={<CustomTooltip />} />
-                    <Legend />
-                    <ReferenceLine y={name == "Benjamin" ? 80.8 : 113.4} stroke="red" strokeWidth={2} />
-                    <Line type="natural" dataKey="kcal_500_deficit" stroke="lime" strokeWidth={2} />
-                    <Line type="monotone" dataKey="kcal_1000_deficit" stroke="magenta" strokeWidth={2} />
-                    <Line type="natural" dataKey="fasted" stroke="blue" strokeWidth={2} />
-                    <Line type="natural" dataKey="actual_weight" stroke="black" strokeWidth={2} />
-                </LineChart>
-            </div>
-        </div> */}

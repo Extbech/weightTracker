@@ -2,31 +2,19 @@ import WeightChart from "../components/WeightChart";
 import { IResponse } from "../components/WeightChart";
 import { useState, useEffect } from "react";
 import AddWeight from "../components/AddWeight";
-import Card from "../components/Card";
-
 
 const HomePage = () => {
-    const [mailinMax, setMailinMax] = useState<IResponse[]>([]);
     const [benjiMax, setBenjiMax] = useState<IResponse[]>([]);
-    const [einarMax, setEinarMax] = useState<IResponse[]>([]);
 
     const placeData = (data: IResponse[]) => {
         if (data.length > 0) {
             let benji_placeholder: IResponse[] = [];
-            let mailin_placeholder: IResponse[] = [];
-            let einar_placeholder: IResponse[] = [];
             data.map(el => {
                 if (el.name == "Benjamin") {
                     benji_placeholder.push(el);
-                } else if (el.name == "Mailin") {
-                    mailin_placeholder.push(el)
-                } else {
-                    einar_placeholder.push(el)
                 }
             });
             setBenjiMax(benji_placeholder);
-            setMailinMax(mailin_placeholder);
-            setEinarMax(einar_placeholder);
 
         }
     };
