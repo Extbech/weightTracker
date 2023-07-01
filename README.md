@@ -23,6 +23,10 @@ The Weight Tracker Web App is designed to assist you in monitoring your weight a
 - Ability to add your actual weight to compare and analyze your progress.
 - User-friendly interface with intuitive navigation and clear data representation.
 
+<div align="center" margin="10px">
+<img src="https://github.com/Extbech/weightTrakcer/blob/main/Images/weight-chart.png" alt="Chart" style="width:70%;" />
+</div>
+
 ## Technologies
 
 The Weight Tracker Web App is built using the following technologies:
