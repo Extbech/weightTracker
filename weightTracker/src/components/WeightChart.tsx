@@ -52,7 +52,7 @@ const WeightChart = ({ data, name }: { data: IResponse[], name: string }) => {
                     />
                     <Tooltip content={<CustomTooltip />} />
                     <XAxis dataKey={"timestamp"} stroke="#312e81" tickCount={5} />
-                    <YAxis domain={[60, 85]} stroke="#312e81" tickCount={5} dy={-5} />
+                    <YAxis domain={[60, 85]} stroke="#312e81" ticks={[60, 65, 70, 75, 80, 85]} dy={-5} label={{ value: 'Weight (Kg)', angle: -90, position: 'insideLeft' }} />
                 </LineChart>
             </ResponsiveContainer>
         </Card>
