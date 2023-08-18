@@ -49,6 +49,7 @@ const WeightChart = ({ data, name }: { data: IResponse[], name: string }) => {
                         fillOpacity={1}
                         strokeWidth={1.5}
                         dot={false}
+                        connectNulls={true}
                     />
                     <Tooltip content={<CustomTooltip />} />
                     <XAxis dataKey={"timestamp"} stroke="#312e81" tickCount={5} />
