@@ -1,21 +1,17 @@
 import { LineChart, Line, ReferenceLine, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import CustomTooltip from "./CustomTooltip";
-import Card from "./Card";
-export interface IResponse {
-    name: string,
-    timestamp: Date,
-    actual_weight: number,
-    max_weight_loss_1: number,
-    max_weight_loss_2: number,
-    max_weight_loss_3: number,
-    max_weight_loss_4: number,
-    max_weight_loss_5: number,
-    kcal_500_deficit: number,
-    kcal_1000_deficit: number
-}
-const WeightChart = ({ data, name }: { data: IResponse[], name: string }) => {
+import {
+    Box
+} from '@mui/material';
+
+const WeightChart = ({ data, name }: { data: WeightData[], name: string }) => {
     return (
-        <Card>
+        <Box
+            sx={{
+                height: 600,
+                width: 1300,
+                p: 2,
+            }}>
             <ResponsiveContainer>
                 <LineChart data={data}>
                     <Line
@@ -56,7 +52,7 @@ const WeightChart = ({ data, name }: { data: IResponse[], name: string }) => {
                     <YAxis domain={[75, 82]} stroke="#312e81" dy={-5} label={{ value: 'Weight (Kg)', angle: -90, position: 'insideLeft' }} />
                 </LineChart>
             </ResponsiveContainer>
-        </Card>
+        </Box>
     );
 };
 export default WeightChart;

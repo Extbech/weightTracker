@@ -1,14 +1,17 @@
 import { useState } from 'react';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+import {
+    Typography,
+    Box,
+    InputLabel,
+    MenuItem,
+    FormControl,
+    Select,
+    TextField,
+    Button
+} from '@mui/material';
+import { SelectChangeEvent } from '@mui/material/Select';
 import SubmitWeight from '../helper/SubmitWeight';
 import dayjs, { Dayjs } from 'dayjs';
-import Card from './Card';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -59,13 +62,12 @@ const AddWeight = () => {
 
     return (
         <Box sx={{ display: "flex", flexDirection: "column", justifyContent: 'center', alignContent: 'center' }}>
-            <p className='text-2xl'>Add Weight!</p>
+            <Typography variant='h5' component="h1" fontWeight="bold" letterSpacing={2}>Add Weight!</Typography>
             <Box sx={{
-                minWidth: 120, m: 3, display: 'flex',
-                flexDirection: 'row', justifyContent: 'center', alignContent: 'center',
-                brackground: 'gray'
+                minWidth: 120, m: 2, display: 'flex',
+                flexDirection: 'row', justifyContent: 'center', alignContent: 'center'
             }}>
-                <Box sx={{ width: 1050, background: "rgb(17 24 39)", borderRadius: 3 }}>
+                <Box sx={{ width: '100%', borderRadius: 3 }}>
                     <FormControl sx={{ m: 1, width: '25ch', borderRadius: 3 }}>
                         <InputLabel id="demo-simple-select-label">Name</InputLabel>
                         <Select
@@ -101,12 +103,23 @@ const AddWeight = () => {
                         </LocalizationProvider>
                     </FormControl>
                     <FormControl sx={{ m: 1, width: '25ch' }}>
-                        <Button id="btn" variant='contained' size='large' sx={{ height: 54 }} onClick={handleSubmit}>Send</Button>
+                        <Button
+                            id="btn"
+                            variant='contained'
+                            size='large'
+                            sx={{
+                                height: 54,
+                                backgroundColor: (theme) => theme.palette.success.dark
+                            }}
+                            onClick={handleSubmit}
+                        >
+                            Send
+                        </Button>
                     </FormControl>
                 </Box>
             </Box>
             {returnMsg ?
-                <p>{returnMsg}</p>
+                <Typography>{returnMsg}</Typography>
                 : null
             }
         </Box>

@@ -29,8 +29,8 @@ def close_connection(exception):
     if db is not None:
         db.close()
 
-@app.route("/Get_Max_Weight", methods=['GET'])
-def Get_Max_Weight():
+@app.route("/api/weight/data/<id>", methods=['GET'])
+def Get_Max_Weight(id: int):
     conn = get_db()
     try:
         data = select_max_weight(conn)

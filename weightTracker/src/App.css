@@ -18,41 +18,11 @@
   align-items: center;
 }
 
-.MuiOutlinedInput-notchedOutline {
-  border-color: white !important;
+.header-button {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.MuiFilledInput-root {
-  border-bottom: 1px solid white !important;
-  color: white !important;
-}
-
-.MuiInput-root {
-  border-bottom: 1px solid white !important;
-  color: white !important;
-}
-
-.MuiSelect-select .MuiSelect-outlined .MuiInputBase-input .MuiOutlinedInput-input {
-  color: white !important;
-  background-color: rgb(17 24 39) !important;
-}
-
-.MuiInputLabel-root {
-  color: white !important;
-}
-
-.MuiInputBase-root {
-  color: white !important;
-}
-
-.MuiButtonBase-root {
-  color: white !important;
-}
-
-.MuiSelect-icon {
-  color: white !important;
-}
-
-.MuiPaper-root {
-  background-color: rgb(17 24 39) !important;
+.header-button.active {
+  /* background: linear-gradient(45deg, #007bff, #00bfff); */
+  background: linear-gradient(45deg, #7863E3, #533cc5);
 }

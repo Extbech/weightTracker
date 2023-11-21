@@ -1,16 +1,16 @@
 import { TooltipProps } from 'recharts';
-
+import { Box, Typography } from '@mui/material';
 const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>) => {
   if (active && payload) {
     return (
-      <div style={{ backgroundColor: '#312e81', padding: '5px' }}>
-        <p>Date: {label}</p>
+      <Box sx={{ backgroundColor: (theme) => theme.palette.primary.main, padding: '5px' }}>
+        <Typography sx={{ color: 'whitesmoke' }}>Date: {label}</Typography>
         {payload.map((item, index) => (
-          <p key={index} style={{ color: item.color }}>
+          <Typography key={index} sx={{ color: item.color }}>
             {`${item.name}: ${item.value} kg`}
-          </p>
+          </Typography>
         ))}
-      </div>
+      </Box>
     );
   }
 
