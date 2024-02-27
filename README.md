@@ -1,4 +1,4 @@
-# Weight Tracker Web App
+# FitHub
 
 [![License](https://img.shields.io/badge/license-GPL--3.0-blue.svg)](https://github.com/your-username/weight-tracker-app/blob/main/LICENSE)
 
